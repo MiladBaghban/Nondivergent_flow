@@ -18,7 +18,7 @@ import numpy as np     # library of python for calculate the calculation of belo
 x, y, z, K = sp.symbols('x y z K')              # Definition of symbolic variables
 
 u = (K * x) / ((x**2) + (z**2))                 # Definition of functions
-w = (K * z) / ((x**2) + (z^2))                  # Definition of functions
+w = (K * z) / ((x**2) + (z**2))                  # Definition of functions
 
 grad_u = sp.gradient(u, (x, y, z))              # Calculating the gradient symbolically
 grad_w = sp.gradient(w, (x, y, z))              # Calculating the gradient symbolically
@@ -34,7 +34,7 @@ def u_num(x, z, K):
     return (K * x) / ((x**2) + (z**2))
 
 def w_num(x, z, K):
-    return (K * z) / ((x**2) + (z^2))
+    return (K * z) / ((x**2) + (z**2))
 
 x0, z0, K0 = 1, 2, 3
 grad_u_num = np.array(sp.gradient(u_num, (x, z))(x0, z0, K0))
