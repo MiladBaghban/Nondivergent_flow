@@ -15,13 +15,13 @@ import numpy as np     # library of python for calculate the calculation of belo
   
  # If you want to calculate the gradient symbolic :
   
-x, y, z, K = sp.symbols('x y z K')              # Definition of symbolic variables
+x, y, z, K = sp.symbols('x z K')              # Definition of symbolic variables
 
 u = (K * x) / ((x**2) + (z**2))                 # Definition of functions
 w = (K * z) / ((x**2) + (z**2))                  # Definition of functions
 
-grad_u = sp.gradient(u, (x, y, z))              # Calculating the gradient symbolically
-grad_w = sp.gradient(w, (x, y, z))              # Calculating the gradient symbolically
+grad_u = sp.gradient(u, (x))              # Calculating the gradient symbolically
+grad_w = sp.gradient(w, (z))              # Calculating the gradient symbolically
 
 print("u:", grad_u)                             # Gradient display
 print("w:", grad_w)                             # Gradient display
